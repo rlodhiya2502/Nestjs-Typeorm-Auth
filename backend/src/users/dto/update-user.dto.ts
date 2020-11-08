@@ -1,4 +1,4 @@
-import { ApiModelPropertyOptional } from '@nestjs/swagger';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 import {
   IsEmail,
   IsString,
@@ -10,30 +10,30 @@ import {
 import { UserRoles } from '../../shared/user-roles';
 
 export class UpdateUserDto {
-  @ApiModelPropertyOptional()
+  @ApiPropertyOptional()
   @IsEmail()
   @IsOptional()
   readonly email?: string;
 
-  @ApiModelPropertyOptional()
+  @ApiPropertyOptional()
   @IsString()
   @IsNotEmpty()
   @IsOptional()
   readonly password?: string;
 
-  @ApiModelPropertyOptional()
+  @ApiPropertyOptional()
   @IsString()
   @IsNotEmpty()
   @IsOptional()
   readonly username?: string;
 
-  @ApiModelPropertyOptional()
+  @ApiPropertyOptional()
   @IsBoolean()
   @IsNotEmpty()
   @IsOptional()
   readonly verified?: boolean;
 
-  @ApiModelPropertyOptional({
+  @ApiPropertyOptional({
     enum: UserRoles,
   })
   @IsNotEmpty()
